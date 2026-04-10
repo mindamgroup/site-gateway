@@ -49,7 +49,7 @@ export default function App() {
         variants={containerVariants}
         initial="hidden"
         animate="show"
-        className="flex w-full max-w-4xl flex-col items-center gap-14 sm:flex-row sm:items-center sm:justify-center sm:gap-0"
+        className="flex w-full max-w-5xl flex-col items-center gap-12 sm:flex-row sm:items-center sm:justify-center sm:gap-0"
       >
         {/* MINDAM SEOUL */}
         <BrandCard {...BRANDS[0]} />
@@ -60,7 +60,7 @@ export default function App() {
           style={{ originY: "50%" }}
           className="hidden sm:block"
         >
-          <div className="mx-12 h-20 w-px bg-gradient-to-b from-transparent via-[#C8B99A]/55 to-transparent" />
+          <div className="mx-24 h-24 w-px bg-gradient-to-b from-transparent via-[#C8B99A]/55 to-transparent" />
         </motion.div>
 
         {/* 모바일 구분선 */}
@@ -77,14 +77,15 @@ export default function App() {
       </motion.div>
 
       {/* 하단 태그라인 */}
-      <motion.p
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.4, delay: 1.1 }}
-        className="mt-20 font-['Playfair_Display',_serif] text-[12px] uppercase tracking-[0.52em] text-[#333333] sm:mt-24"
+        className="mt-20 flex flex-col items-center text-center font-['Playfair_Display',_serif] uppercase tracking-[0.52em] text-[#333333] sm:mt-24"
       >
-        The living lab of <span className="font-bold">hospitality</span>
-      </motion.p>
+        <span className="text-[12px] sm:text-[24px]">The living lab of</span>
+        <span className="mt-2 text-[24px] font-bold sm:mt-4 sm:text-[48px]">hospitality</span>
+      </motion.div>
     </div>
   );
 }
