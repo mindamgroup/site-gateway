@@ -41,7 +41,7 @@ export default function App() {
         transition={{ duration: 1.1, ease }}
         className="mb-14 sm:mb-18"
       >
-        <MindamGroupLogo className="h-16 w-auto text-[#cbb26a] sm:h-20 drop-shadow-sm" />
+        <MindamGroupLogo className="h-32 w-auto text-[#cbb26a] sm:h-40 drop-shadow-sm" />
       </motion.div>
 
       {/* 브랜드 카드 그리드 */}
@@ -81,7 +81,7 @@ export default function App() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.4, delay: 1.1 }}
-        className="mt-20 font-['Playfair_Display',_serif] text-[18px] uppercase tracking-[0.52em] text-[#333333] sm:mt-24"
+        className="mt-20 font-['Playfair_Display',_serif] text-[12px] uppercase tracking-[0.52em] text-[#333333] sm:mt-24"
       >
         The living lab of <span className="font-bold">hospitality</span>
       </motion.p>

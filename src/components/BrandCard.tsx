@@ -44,7 +44,7 @@ export default function BrandCard({ href, Logo, label, sub }: BrandCardProps) {
           className="pointer-events-none absolute inset-0 -z-10 rounded-2xl bg-[#cbb26a]/10 blur-2xl"
         />
 
-        <Logo className="h-10 w-auto text-[#333333] transition-colors duration-500 group-hover:text-[#cbb26a] sm:h-12" />
+        <Logo className="h-20 w-auto text-[#333333] transition-colors duration-500 group-hover:text-[#cbb26a] sm:h-24" />
       </motion.div>
 
       {/* 서브 텍스트 */}
