@@ -197,7 +197,7 @@ export default function App() {
         transition={{ duration: 1.4, delay: 1.1 }}
         className="mt-20 font-['Playfair_Display',_serif] text-[9px] uppercase tracking-[0.52em] text-[#B5ADA5] sm:mt-24"
       >
-        Excellence &nbsp;·&nbsp; Innovation &nbsp;·&nbsp; Seoul
+        The living lab of hospitality
       </motion.p>
     </div>
   );
