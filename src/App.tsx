@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import type { Variants } from "framer-motion";
 import MindamSeoulLogo from "./logos/MindamSeoulLogo";
 import MindamEduAiLogo from "./logos/MindamEduAiLogo";
+import MindamGroupLogo from "./logos/MindamGroupLogo";
 
 /* ─────────────────────────────────────────
    브랜드 데이터
@@ -12,14 +13,14 @@ const brands = [
     href: "https://mindam.seoul.kr",
     Logo: MindamSeoulLogo,
     label: "MINDAM SEOUL",
-    sub: "Premium Fashion & Lifestyle",
+    sub: "Premium Lifestyle Management",
   },
   {
     id: "edu",
     href: "https://mindam.ai.kr",
     Logo: MindamEduAiLogo,
     label: "MINDAM EDU AI LAB",
-    sub: "AI-Powered Education Platform",
+    sub: "AI-Powered Education · Consulting",
   },
 ] as const;
 
@@ -105,7 +106,7 @@ function BrandCard({
         {/* ── 로고 SVG ──
             실제 SVG 교체는 src/logos/MindamSeoulLogo.tsx 또는
             src/logos/MindamEduAiLogo.tsx 파일을 수정하세요. */}
-        <Logo className="h-16 w-[220px] text-[#2C2C2C] transition-colors duration-500 group-hover:text-[#7A6048] sm:h-20 sm:w-[280px]" />
+        <Logo className="h-10 w-auto text-[#2C2C2C] transition-colors duration-500 group-hover:text-[#7A6048] sm:h-12" />
       </motion.div>
 
       {/* 서브 텍스트 */}
@@ -114,7 +115,7 @@ function BrandCard({
           rest: { opacity: 0.42 },
           hovered: { opacity: 0.8, transition: { duration: 0.3 } },
         }}
-        className="font-['Georgia',_serif] text-[10px] uppercase tracking-[0.38em] text-[#7A6E62]"
+        className="font-['Playfair_Display',_serif] text-[10px] uppercase tracking-[0.38em] text-[#7A6E62]"
       >
         {sub}
       </motion.p>
@@ -147,15 +148,15 @@ export default function App() {
       {/* ── 배경 장식 ── */}
       <BackgroundDecor />
 
-      {/* ── 상단 워드마크 ── */}
-      <motion.p
-        initial={{ opacity: 0, y: -14 }}
+      {/* ── 상단 그룹 심볼 로고 ── */}
+      <motion.div
+        initial={{ opacity: 0, y: -16 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, ease }}
-        className="mb-16 font-['Georgia',_serif] text-[10px] uppercase tracking-[0.6em] text-[#9E9289] sm:mb-20"
+        transition={{ duration: 1.1, ease }}
+        className="mb-14 sm:mb-18"
       >
-        MINDAM GROUP
-      </motion.p>
+        <MindamGroupLogo className="h-16 w-auto text-[#cbb26a] sm:h-20 drop-shadow-sm" />
+      </motion.div>
 
       {/* ── 로고 그리드 ── */}
       <motion.div
@@ -194,7 +195,7 @@ export default function App() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.4, delay: 1.1 }}
-        className="mt-20 font-['Georgia',_serif] text-[9px] uppercase tracking-[0.52em] text-[#B5ADA5] sm:mt-24"
+        className="mt-20 font-['Playfair_Display',_serif] text-[9px] uppercase tracking-[0.52em] text-[#B5ADA5] sm:mt-24"
       >
         Excellence &nbsp;·&nbsp; Innovation &nbsp;·&nbsp; Seoul
       </motion.p>
