@@ -11,12 +11,12 @@ export default function MindamEduAiLogo({ className = "" }: Props) {
   return (
     <svg
       className={className}
-      width="110.35939mm"
-      height="30.480032mm"
       viewBox="0 0 110.35939 30.480032"
       xmlns="http://www.w3.org/2000/svg"
       aria-label="MINDAM EDU AI LAB"
       fill="currentColor"
+      width="100%"
+      height="100%"
     >
       <g transform="translate(-73.554167,-137.05417)">
         <g transform="matrix(0.35277785,0,0,0.35277785,73.554137,175.15421)">

@@ -14,7 +14,7 @@ export const BRANDS = [
     href: "https://mindam.ai.kr",
     Logo: MindamEduAiLogo,
     label: "MINDAM EDU AI LAB",
-    sub: "AI-Powered Education·Consulting",
+    sub: "AI-Powered Education",
   },
 ] as const;
 

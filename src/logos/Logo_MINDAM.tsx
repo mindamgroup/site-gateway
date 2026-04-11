@@ -15,6 +15,8 @@ export default function MindamGroupLogo({ className = "" }: Props) {
       className={className}
       aria-label="MINDAM GROUP"
       role="img"
+      width="100%"
+      height="100%"
     >
       <g>
         <g

@@ -11,12 +11,12 @@ export default function MindamSeoulLogo({ className = "" }: Props) {
   return (
     <svg
       className={className}
-      width="110.35939mm"
-      height="30.48004mm"
       viewBox="0 0 110.35939 30.48004"
       xmlns="http://www.w3.org/2000/svg"
       aria-label="MINDAM SEOUL"
       fill="currentColor"
+      width="100%"
+      height="100%"
     >
       <g transform="translate(-39.158333,-140.75833)">
         <g transform="matrix(0.35277785,0,0,0.35277785,39.158303,178.85837)">

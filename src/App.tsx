@@ -1,90 +1,105 @@
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 import MindamGroupLogo from "./logos/Logo_MINDAM";
-import BrandCard from "./components/BrandCard";
+import MindamSeoulLogo from "./logos/Logotype_Seoul";
+import MindamEduAiLogo from "./logos/Logotype_Edu_AI_Lab";
 import BackgroundDecor from "./components/BackgroundDecor";
-import { BRANDS } from "./constants/brands";
+
+// 배경 동영상 임포트
+import bgMovSeoul from "./movs/bgmov_seoul.mp4";
+import bgMovEaLab from "./movs/bgmov_ealab.mp4";
 
 const ease = "easeOut" as const;
 
-const containerVariants: Variants = {
-  hidden: {},
-  show: {
-    transition: {
-      staggerChildren: 0.18,
-      delayChildren: 0.3,
-    },
-  },
-};
-
-const dividerVariants: Variants = {
-  hidden: { scaleY: 0, opacity: 0 },
-  show: {
-    scaleY: 1,
-    opacity: 1,
-    transition: { duration: 0.7, ease, delay: 0.55 },
-  },
-};
-
 export default function App() {
   return (
-    <div
-      className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 py-20"
-      style={{ backgroundColor: "#F9F8F6" }}
-    >
+    <div className="relative h-screen w-screen overflow-hidden bg-[#F9F8F6]">
       {/* 배경 장식 */}
       <BackgroundDecor />
 
-      {/* 메인 그룹 로고 */}
-      <motion.div
-        initial={{ opacity: 0, y: -16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.1, ease }}
-        className="mb-14 sm:mb-18"
-      >
-        <MindamGroupLogo className="h-32 w-auto text-[#cbb26a] sm:h-40 drop-shadow-sm" />
-      </motion.div>
-
-      {/* 브랜드 카드 그리드 */}
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        animate="show"
-        className="flex w-full max-w-5xl flex-col items-center gap-12 sm:flex-row sm:items-center sm:justify-center sm:gap-0"
-      >
-        {/* MINDAM SEOUL */}
-        <BrandCard {...BRANDS[0]} />
-
-        {/* 데스크탑 구분선 */}
-        <motion.div
-          variants={dividerVariants}
-          style={{ originY: "50%" }}
-          className="hidden sm:block"
+      {/* 상단 영역: MINDAM SEOUL */}
+      <div className="relative flex h-1/2 w-full items-center justify-center border-b border-[#C8B99A]/20 overflow-hidden">
+        {/* 배경 동영상 */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 h-full w-full object-cover"
         >
-          <div className="mx-24 h-24 w-px bg-gradient-to-b from-transparent via-[#C8B99A]/55 to-transparent" />
-        </motion.div>
+          <source src={bgMovSeoul} type="video/mp4" />
+        </video>
+        {/* 어두운 오버레이 */}
+        <div className="absolute inset-0 bg-black/40" />
 
-        {/* 모바일 구분선 */}
-        <motion.div
-          variants={dividerVariants}
-          style={{ originX: "50%" }}
-          className="block sm:hidden"
+        <motion.a
+          href="https://mindam.seoul.kr"
+          target="_blank"
+          rel="noopener noreferrer"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease, delay: 0.2 }}
+          className="relative z-10 flex w-[60%] sm:w-[20%] items-center justify-center transition-transform duration-500 hover:scale-105"
         >
-          <div className="h-px w-16 bg-gradient-to-r from-transparent via-[#C8B99A]/55 to-transparent" />
-        </motion.div>
+          <MindamSeoulLogo className="text-white transition-colors duration-500 hover:text-[#cbb26a]" />
+        </motion.a>
+      </div>
 
-        {/* MINDAM EDU AI LAB */}
-        <BrandCard {...BRANDS[1]} />
-      </motion.div>
+      {/* 하단 영역: MINDAM EDU AI LAB */}
+      <div className="relative flex h-1/2 w-full items-center justify-center overflow-hidden">
+        {/* 배경 동영상 */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 h-full w-full object-cover"
+        >
+          <source src={bgMovEaLab} type="video/mp4" />
+        </video>
+        {/* 어두운 오버레이 */}
+        <div className="absolute inset-0 bg-black/50" />
 
-      {/* 하단 태그라인 */}
+        <motion.a
+          href="https://mindam.ai.kr"
+          target="_blank"
+          rel="noopener noreferrer"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease, delay: 0.4 }}
+          className="relative z-10 flex w-[60%] sm:w-[20%] items-center justify-center transition-transform duration-500 hover:scale-105"
+        >
+          <MindamEduAiLogo className="text-white transition-colors duration-500 hover:text-[#cbb26a]" />
+        </motion.a>
+      </div>
+
+      {/* 중앙 로고: MINDAM Symbol */}
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1.4, delay: 1.1 }}
-        className="mt-20 flex flex-col items-center text-center font-['Playfair_Display',_serif] uppercase tracking-[0.52em] text-[#333333] sm:mt-24"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1.2, ease, delay: 0.6 }}
+        className="absolute left-1/2 top-1/2 z-10 w-[20%] sm:w-[6%] -translate-x-1/2 -translate-y-1/2"
       >
-        <span className="text-[12px] sm:text-[24px]">The living lab of</span>
-        <span className="mt-2 text-[24px] font-bold sm:mt-4 sm:text-[48px]">hospitality</span>
+        {/* 은은한 배경 광채 효과 */}
+        <motion.div
+          animate={{
+            opacity: [0.3, 0.6, 0.3],
+            scale: [1, 1.2, 1],
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="absolute inset-0 -z-10 bg-[#cbb26a]/30 blur-2xl rounded-full"
+        />
+        
+        <motion.div
+          className="relative drop-shadow-[0_0_15px_rgba(203,178,106,0.3)]"
+          whileHover={{ scale: 1.1 }}
+          transition={{ duration: 0.5, ease }}
+        >
+          <MindamGroupLogo className="text-[#cbb26a]" />
+        </motion.div>
       </motion.div>
     </div>
   );
